@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply text-neutral-800
+    }
+    * {
+        @apply outline-none
+    }
+}
+
+@layer components {
+    .field {
+        @apply flex flex-col w-full gap-2
+    }
+    .field input {
+        @apply w-full rounded-md bg-white border-[1px] border-neutral-300 placeholder:text-neutral-300 h-10 px-4
+    }
+    .button {
+        @apply w-full h-10 bg-blue-600 text-white rounded-md duration-300 hover:bg-blue-700 hover:-translate-y-2 hover:shadow-blue-300 hover:shadow-md
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

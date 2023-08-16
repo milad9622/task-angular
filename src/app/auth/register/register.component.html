@@ -1,0 +1,44 @@
+<main class="flex w-screen h-screen justify-center">
+    <div class="flex flex-col flex-shrink-0 h-full w-full justify-between p-4 gap-6 lg:w-2/5 lg:max-w-none max-w-xl relative">
+        <!-- alert message -->
+        <div class="flex items-center justify-center text-base font-bold absolute mr-auto ml-auto left-0 right-0 w-96 h-14 rounded-lg border {{alertBorderColor}} {{alertBG}}" *ngIf="isSubmitted">
+            <p class={{alertColor}}>{{alertText}}</p>
+        </div>
+        <!-- logo -->
+        <div class="text-3xl font-bold h-10">
+            <img src="/assets/logo.png" width="60"/>
+        </div>
+        <!-- form -->
+        <div class="flex flex-col gap-9">
+            <div class="mb-4">
+                <p class="text-2xl font-bold mb-3">Sign up</p>
+                <span class="text-neutral-500">Don't have an account ? create one, it only takes a minute</span>
+            </div>
+            <div class="formControl flex flex-col gap-4">
+                <div class="field">
+                    <label for="">Full Name</label>
+                    <input #txtname type="text" name="text">
+                </div>
+                <div class="field">
+                    <label for="">Email address</label>
+                    <input #txtemail type="text" name="text">
+                </div>
+                <div class="field">
+                    <label for="">Password</label>
+                    <input #txtpassword type="password" name="password">
+                </div>
+                <div class="field mt-2">
+                    <button (click) = "sendForm()" class="button">Sign up</button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <span class="text-neutral-500">Already have account ? </span>
+            <a href="/login" class="text-blue-600 font-bold">Log In</a>
+        </div>
+    </div>
+    <!-- right image -->
+    <div class="lg:w-3/5 bg-red-400 hidden lg:block">
+        <img src="/assets/imglogin.jpg" class="w-full h-full object-cover object-center" draggable="false" />
+    </div>
+</main>

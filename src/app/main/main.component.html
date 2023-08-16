@@ -1,0 +1,19 @@
+<main class="flex justify-center py-5 w-full">
+    <!-- table users -->
+    <table class="w-[600px] bg-neutral-100 rounded-xl overflow-hidden text-center">
+        <tr class="bg-blue-500 text-white border-b-2 border-blue-700">
+            <th class="w-1/3 h-10">Name</th>
+            <th>Email</th>
+            <th colspan="2"> Action </th>
+        </tr>
+        <tr class="h-11" *ngFor="let user of users; let i = index">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td class="w-[100px]"><button (click)="deleteData(user.id)" class="text-rose-500 font-bold hover:text-red-600 duration-300">Delete</button></td>
+            <td *ngIf="user.active==0 || user.active==2" class="w-[100px]"><button (click)="actData(user.id)" class="text-green-500 font-bold hover:text-green-600 duration-300">Active</button></td>
+            <td *ngIf="user.active==1" class="w-[100px]"><button (click)="deactData(user.id)" class="text-yellow-500 font-bold hover:text-yellow-600 duration-300">Passive</button></td>
+        </tr>
+    </table>
+</main>
+    
+
